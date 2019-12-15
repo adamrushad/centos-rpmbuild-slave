@@ -2,10 +2,10 @@ FROM adamrushad/centos-jnlp-slave:8
 MAINTAINER AdamRushad <2429990+adamrushad@users.noreply.github.com>
 
 #Install
-RUN yum -y install autoconf automake bison byacc cscope ctags diffstat \
-  doxygen elfutils flex gcc gcc-c++ gcc-gfortran indent intltool libtool \
-  patch patchutils redhat-rpm-config rcs rpm-build rpm-sign subversion git \
-  mercurial swig systemtap make yum-utils gcc-objc gcc-objc++ gcc-go nasm cmake \
+RUN dnf config-manager --set-enabled PowerTools && yum -y install autoconf automake bison byacc cscope ctags diffstat \
+  doxygen elfutils flex gcc gcc-c++ gcc-gfortran intltool libtool \
+  patch patchutils redhat-rpm-config rpm-build rpm-sign subversion git \
+  mercurial swig systemtap make yum-utils nasm cmake \
   imake && yum clean all
 
 ARG BUILD_DATE
