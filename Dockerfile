@@ -2,7 +2,7 @@ FROM adamrushad/centos-jnlp-slave:8
 MAINTAINER AdamRushad <2429990+adamrushad@users.noreply.github.com>
 
 #Install
-RUN dnf -y install epel-release && dnf -y install mock && dnf clean all
+RUN dnf -y install epel-release && dnf -y install mock rpm-build && dnf clean all
 
 ARG BUILD_DATE
 ARG VCS_REF
